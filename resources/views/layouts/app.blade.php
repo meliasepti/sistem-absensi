@@ -26,6 +26,7 @@
 
 <body>
     <div id="app">
+        {{ $slot ?? '' }}
         @yield('content')
     </div>
 

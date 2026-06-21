@@ -94,6 +94,6 @@ class Labeler extends Component
 
     public function render()
     {
-        return view('livewire.labeler');
+        return view('livewire.labeler')->layout('layouts.app');
     }
 }
