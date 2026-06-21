@@ -15,10 +15,13 @@ class HomeController extends Controller
         $totalAttendance = Attendance::count();
         $unlabeledCount = Attendance::whereNull('label')->count();
         
-        $recentAttendances = Attendance::with('user')
-            ->latest()
-            ->take(5)
-            ->get();
+        $query = Attendance::with('user')->latest();
+
+        if (!$user->is_admin) {
+            $query->where('user_id', $user->id);
+        }
+
+        $recentAttendances = $query->take(5)->get();
 
         $alreadyAbsen = false;
         if (!$user->is_admin) {
