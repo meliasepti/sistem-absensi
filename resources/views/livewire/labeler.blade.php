@@ -219,11 +219,4 @@
             </main>
         @endif
     </div>
-</div>
-
-@push('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection@0.0.1/dist/face-landmarks-detection.min.js">
-    </script>
-@endpush
+</div> 
